@@ -1,0 +1,54 @@
+.bannerStyle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+    width: 90%;
+    margin: 100px auto;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .bannerStyle {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bannerImg {
+    border-radius: 15px;
+}
+
+.productsStyle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px;
+    width: 85%;
+    margin: 100px auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .productsStyle {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cardHeight {
+    height: 650px;
+}
+
+.productsImg {
+    height: 250px;
+}
+
+.productDetail {
+    margin-top: 100px;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 45px;
+}
+
+@media only screen and (max-width: 800px) {
+    .productDetail {
+        grid-template-columns: 1fr;
+    }
+}
