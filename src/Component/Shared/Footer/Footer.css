@@ -1,0 +1,28 @@
+.footerSection {
+    background-color: black;
+    color: white;
+}
+
+.footerStyle {
+    width: 85%;
+    margin: 50px auto;
+    padding: 50px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 35px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media only screen and (max-width: 800px) {
+    .footerStyle {
+        grid-template-columns: 2fr;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footerStyle {
+        grid-template-columns: 1fr;
+    }
+}
