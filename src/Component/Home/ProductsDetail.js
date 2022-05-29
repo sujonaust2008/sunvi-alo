@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './Home.css';
+import PurcessInfo from './PurcesesInfo';
 
 const ProductsDetails = () => {
     const {productId} = useParams();
     const [productDetail, setproductDetail]= useState({});
      
     useEffect(()=>{
-        const URL = `http://localhost:5000/manufacturer/${productId}`;
+        const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
         fetch(URL)
         .then(res=>res.json())
         .then(data=>setproductDetail(data))
@@ -27,7 +28,7 @@ const ProductsDetails = () => {
     //     console.log(quantity);
     //     const update = { quantity,name,img,supName,price,description };
     //     console.log(update);
-    //     const URL = `http://localhost:5000/manufacturer/${productId}`;
+    //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
     //     console.log(URL);
     //     fetch(URL, {
     //         method: 'PUT',
@@ -62,7 +63,7 @@ const ProductsDetails = () => {
     //     console.log(quantity);
     //     const update = { quantity,name,img,supName,price,description };
     //     console.log(update);
-    //     const URL = `http://localhost:5000/manufacturer/${productId}`;
+    //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
     //     console.log(URL);
     //     fetch(URL, {
     //         method: 'PUT',
@@ -103,13 +104,9 @@ const ProductsDetails = () => {
                         </Card.Text>
                         <Card.Text className='fw-bold'>Stock: {productDetail?.stock}
                         </Card.Text>
+                        <PurcessInfo></PurcessInfo>
                     </Card.Body>
-                    <Card.Body className='text-center'>
-                        
-                        <button 
-                        className='btn btn-primary rounded px-3'
-                        ><Link to='/' className='btn btn-primary rounded px-3'>Buy Now</Link></button>
-                    </Card.Body>
+                    
                     </Card>
                     </div>
                 
@@ -118,10 +115,10 @@ const ProductsDetails = () => {
 
             
         
-        <div className='text-center mt-4'>
-                <Link to='/manageInventory'>
-                 <button className='btn btn-primary rounded px-5 text-white fw-bold fs-3'>Manage Inventories</button>
-                </Link>
+            <div className='text-center mt-4'>
+                    
+                
+
             </div>
         </div>
         

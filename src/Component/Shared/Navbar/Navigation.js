@@ -31,7 +31,7 @@ const Navigation = () => {
                             </div>
                             <div>
                                 <Nav.Link>{user?
-                                <button onClick={handleSignOut} className="btn btn-link text-decoration-none text-white">SignOut</button>:
+                                <button onClick={handleSignOut} className="btn btn-link text-decoration-none text-white">SignOut <img className='photoURL' src={user?.photoURL} alt={user?.displayName}/></button>:
                                 <CustomLink to="/login">LogIn</CustomLink>}</Nav.Link>
                             </div>
                         

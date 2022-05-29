@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/manufacturer')
+        fetch('https://pacific-river-57240.herokuapp.com/manufacturer')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
@@ -21,11 +21,7 @@ const Products = () => {
                     ></Product>)
                 }
             </div>
-            <div className='text-center'>
-                <Link to='/manageInventory'>
-                 <button className='btn btn-primary rounded px-5 text-white fw-bold fs-3'>Manage Inventories</button>
-                </Link>
-            </div>
+            
         </div>
     );
 };
