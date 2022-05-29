@@ -9,7 +9,7 @@ const Product = ({product}) => {
     const navigate = useNavigate();
    
     const productDetailPage = id =>{
-        navigate(`/service/${id}`);
+        navigate(`/manufacturer/${id}`);
        
     }
     return (
@@ -20,16 +20,16 @@ const Product = ({product}) => {
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.description}
                     </Card.Text>
-                    <Card.Text className='fw-bold'>Price: ${product.price}
+                    <Card.Text className='fw-bold'>Price: <span className='text-danger'>${product.Price}</span>
                     </Card.Text>
-                    <Card.Text className='fw-bold'>Supplier: {product.supName}
+                    <Card.Text className='fw-bold'>Min Order: <span className='text-danger'>{product.minimumOrder}</span> nos
                     </Card.Text>
-                    <Card.Text className='fw-bold'>Quantity: {product.quantity}
+                    <Card.Text className='fw-bold'>Stock: <span className='text-danger'>{product.stock}</span>
                     </Card.Text>
                 </Card.Body>
                 
                 <Card.Body className='text-center'>
-                    <button onClick={()=> productDetailPage(_id)} className='btn btn-primary rounded px-3'>Update Now</button>
+                    <button onClick={()=> productDetailPage(_id)} className='btn btn-primary rounded px-3'>Buy Now</button>
                 </Card.Body>
             </Card>
            

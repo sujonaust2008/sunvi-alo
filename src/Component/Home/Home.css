@@ -36,7 +36,8 @@
 }
 
 .productsImg {
-    height: 250px;
+    height: 320px;
+    width: 100%;
 }
 
 .productDetail {
@@ -50,5 +51,6 @@
 @media only screen and (max-width: 800px) {
     .productDetail {
         grid-template-columns: 1fr;
+        width: 90%;
     }
 }

@@ -5,6 +5,10 @@ import { Route, Routes } from 'react-router-dom';
 import NotFound from './Component/Shared/NotFound/NotFound';
 import Footer from './Component/Shared/Footer/Footer';
 import Home from './Component/Home/Home';
+import Login from './Component/Login/Login';
+import Register from './Component/Login/Register/Register';
+import ProductsDetails from './Component/Home/ProductsDetail';
+import RequireAuth from './Component/Login/RequirAuth/RequireAuth';
 
 function App() {
   return (
@@ -13,7 +17,11 @@ function App() {
       <Routes>
         
         <Route path='/' element={<Home></Home>}></Route>
-        
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
+        <Route path= '/manufacturer/:productId' element={<RequireAuth>
+          <ProductsDetails></ProductsDetails>
+        </RequireAuth>}></Route>
         
 
         
