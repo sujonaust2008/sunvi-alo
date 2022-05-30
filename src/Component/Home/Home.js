@@ -4,6 +4,8 @@ import BusinessSummery from './BusinessSummery';
 import ContactUs from './ContactUs';
 
 import Products from './Products';
+import ReChart from './ReChart';
+import Reviews from './Reviews';
 
 const Home = () => {
     return (
@@ -11,7 +13,9 @@ const Home = () => {
             <Banner></Banner>
             <Products></Products>
             <BusinessSummery></BusinessSummery>
+            <Reviews></Reviews>
             <ContactUs></ContactUs>
+            <ReChart></ReChart>
             
         </div>
     );

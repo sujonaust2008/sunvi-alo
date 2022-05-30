@@ -22,7 +22,7 @@ const Navigation = () => {
                                 <Nav.Link><CustomLink to="/blogs">Blogs</CustomLink></Nav.Link>
                                 {
                                     user && <>
-                                    <Nav.Link ><CustomLink to="/service/:productId">ProductDetail</CustomLink></Nav.Link>
+                                    <Nav.Link ><CustomLink to="/manufacturer/:productId">ProductDetail</CustomLink></Nav.Link>
                                     <Nav.Link ><CustomLink to="/manageInventory">ManageItems</CustomLink></Nav.Link>
                                     <Nav.Link ><CustomLink to="/addItems">AddItems</CustomLink></Nav.Link>
                                     <Nav.Link ><CustomLink to="/myItems">MyItems</CustomLink></Nav.Link>
