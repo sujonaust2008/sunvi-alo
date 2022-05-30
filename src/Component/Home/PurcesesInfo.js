@@ -13,18 +13,18 @@ const PurcessInfo = () => {
 
     const onSubmit = data => {
         console.log(data);
-        // const url = `https://floating-sands-97390.herokuapp.com/service`;
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        // .then(res=> res.json())
-        // .then(result =>{
-        //     console.log(result);
-        // } )
+        const url = `https://pacific-river-57240.herokuapp.com/manufacturer/order`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(result =>{
+            console.log(result);
+        } )
         
         const orderNum= parseInt(data.orderQuantity);
         if(orderNum<1000){

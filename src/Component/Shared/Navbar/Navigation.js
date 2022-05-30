@@ -23,9 +23,8 @@ const Navigation = () => {
                                 {
                                     user && <>
                                     <Nav.Link ><CustomLink to="/manufacturer/:productId">ProductDetail</CustomLink></Nav.Link>
-                                    <Nav.Link ><CustomLink to="/manageInventory">ManageItems</CustomLink></Nav.Link>
-                                    <Nav.Link ><CustomLink to="/addItems">AddItems</CustomLink></Nav.Link>
-                                    <Nav.Link ><CustomLink to="/myItems">MyItems</CustomLink></Nav.Link>
+                                    <Nav.Link ><CustomLink to="/manufacturer/:id/:order">My order</CustomLink></Nav.Link>
+                                    
                                     </>
                                 }
                                 <Nav.Link><CustomLink to="/myportfolio">My Portfolio</CustomLink></Nav.Link>

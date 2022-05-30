@@ -10,10 +10,12 @@ import Register from './Component/Login/Register/Register';
 import ProductsDetails from './Component/Home/ProductsDetail';
 import RequireAuth from './Component/Login/RequirAuth/RequireAuth';
 import MyPortfolio from './Component/MyPortfolio/MyPortfolio';
+import UserOrders from './Component/Dashboard/UserOrders/UserOrders';
+import Blogs from './Component/Blogs/Blogs';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Navigation></Navigation>
       <Routes>
         
@@ -24,7 +26,8 @@ function App() {
           <ProductsDetails></ProductsDetails>
         </RequireAuth>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
-        
+        <Route path='/manufacturer/:id/:order' element={<UserOrders></UserOrders>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
 
         
 
