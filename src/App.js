@@ -9,6 +9,7 @@ import Login from './Component/Login/Login';
 import Register from './Component/Login/Register/Register';
 import ProductsDetails from './Component/Home/ProductsDetail';
 import RequireAuth from './Component/Login/RequirAuth/RequireAuth';
+import MyPortfolio from './Component/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path= '/manufacturer/:productId' element={<RequireAuth>
           <ProductsDetails></ProductsDetails>
         </RequireAuth>}></Route>
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         
 
         

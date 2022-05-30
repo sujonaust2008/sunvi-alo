@@ -1,0 +1,36 @@
+.Myprotfolio {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 35px;
+    width: 85%;
+    margin: 100px auto;
+    align-items: center;
+}
+
+.Myprotfolio>div>img {
+    border-radius: 15px;
+    padding: 15px;
+    height: 350px;
+}
+
+.websiteLink {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 35px;
+    width: 85%;
+    margin: 100px auto;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .Myprotfolio,
+    .websiteLink {
+        grid-template-columns: 1fr;
+    }
+}
+
+.websiteLink img {
+    border-radius: 15px;
+    padding: 15px;
+    height: 250px;
+}

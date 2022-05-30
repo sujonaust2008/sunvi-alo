@@ -28,6 +28,7 @@ const Navigation = () => {
                                     <Nav.Link ><CustomLink to="/myItems">MyItems</CustomLink></Nav.Link>
                                     </>
                                 }
+                                <Nav.Link><CustomLink to="/myportfolio">My Portfolio</CustomLink></Nav.Link>
                             </div>
                             <div>
                                 <Nav.Link>{user?
