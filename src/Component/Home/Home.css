@@ -42,7 +42,7 @@
 
 .productDetail {
     margin-top: 100px;
-    width: 60%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 45px;

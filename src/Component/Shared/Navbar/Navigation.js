@@ -1,7 +1,8 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import CustomLink from './CustomLink';
 
@@ -23,7 +24,11 @@ const Navigation = () => {
                                 {
                                     user && <>
                                     <Nav.Link ><CustomLink to="/manufacturer/:productId">ProductDetail</CustomLink></Nav.Link>
-                                    <Nav.Link ><CustomLink to="/manufacturer/:id/:order">My order</CustomLink></Nav.Link>
+                                    <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                                        <NavDropdown.Item href="#action/3.1"><Link to="/dashboard">My Orders</Link></NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.2"><Link to="/dashboard/profile">My Profile</Link></NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.3"><Link to="/dashboard/reviews">My Reviews</Link></NavDropdown.Item>
+                                    </NavDropdown>
                                     
                                     </>
                                 }

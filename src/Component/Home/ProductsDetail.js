@@ -9,7 +9,7 @@ const ProductsDetails = () => {
     const [productDetail, setproductDetail]= useState({});
      
     useEffect(()=>{
-        const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
+        const URL = `http://localhost:5000/manufacturer/${productId}`;
         fetch(URL)
         .then(res=>res.json())
         .then(data=>setproductDetail(data))
@@ -17,33 +17,33 @@ const ProductsDetails = () => {
 
     // const handleQuantity = (itemQuantity) => {
         
-    //     console.log(itemQuantity);
-    //     const oldQuantity = parseInt(productDetail.stock);
-    //     const name= productDetail.name;
-    //     const img=productDetail.img;
-    //     const description = productDetail.description;
-    //     const minimumOrder= productDetail.minimumOrder;
-    //     const Price = productDetail.Price;
-    //     const stock = oldQuantity-1000;
-    //     console.log(quantity);
-    //     const update = { quantity,name,img,supName,price,description };
-    //     console.log(update);
-    //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
-    //     console.log(URL);
-    //     fetch(URL, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(update)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //         alert('Product delivered successfully')
-    //             console.log('success', data);
-    //             setproductDetail(data);
+        // console.log(itemQuantity);
+        // const oldQuantity = parseInt(productDetail.stock);
+        // const name= productDetail.name;
+        // const img=productDetail.img;
+        // const description = productDetail.description;
+        // const minimumOrder= productDetail.minimumOrder;
+        // const Price = productDetail.Price;
+        // const stock = oldQuantity-1000;
+        // console.log(quantity);
+        // const update = { quantity,name,img,supName,price,description };
+        // console.log(update);
+        // const URL = `http://localhost:5000/manufacturer//${productId}`;
+        // console.log(URL);
+        // fetch(URL, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(update)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //     alert('Product delivered successfully')
+        //         console.log('success', data);
+        //         setproductDetail(data);
                 
-    //         })
+        //     })
             
     // }
 
@@ -63,7 +63,7 @@ const ProductsDetails = () => {
     //     console.log(quantity);
     //     const update = { quantity,name,img,supName,price,description };
     //     console.log(update);
-    //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
+    //     const URL = `http://localhost:5000/manufacturer/manufacturer/${productId}`;
     //     console.log(URL);
     //     fetch(URL, {
     //         method: 'PUT',
@@ -90,11 +90,7 @@ const ProductsDetails = () => {
                     <div>
                     <Card>
                         <Card.Img variant="top" src={productDetail?.img} className="productsImg "/>
-                    </Card>
-                    </div>
-                    <div>
-                    <Card>
-                    <Card.Body>
+                        <Card.Body>
                         <Card.Title>{productDetail?.name}</Card.Title>
                         <Card.Text>{productDetail?.description}
                         </Card.Text>
@@ -104,6 +100,13 @@ const ProductsDetails = () => {
                         </Card.Text>
                         <Card.Text className='fw-bold'>Stock: {productDetail?.stock}
                         </Card.Text>
+                    </Card.Body>
+                    </Card>
+                    </div>
+                    <div>
+                    <Card>
+                    <Card.Body>
+                        
                         <PurcessInfo></PurcessInfo>
                     </Card.Body>
                     

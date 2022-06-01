@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Project Name: Sunvi -alo
+* We are a light manufacturing company where we produced CFL, LED light
+* Used : React, JavaScript for font End Side
+* Used : NodeJs, Express for serve side
+* used : MongoDB for Database 
+* we use react-hooks, react-hook-forms, react-query, react-router, reCharts,react-auth
+* For Authentication we used google firebase, (email-password, google)
+* Admin Role also implement with payment get way.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

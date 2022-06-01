@@ -23,7 +23,7 @@ const MyPortfolio = () => {
                 </div>
             </div>
             <h2 className='text-primary text-center text-decoration-underline fw-bold mb-5'>Technology I Use for my Project</h2>
-            <h3><span className='text-info'>React </span><span className='text-warning'> JavaScript </span>
+            <h3 className='text-center'><span className='text-info'>React </span><span className='text-warning'> JavaScript </span>
             <span className='text-success'> MongoDB </span>
             <span className='text-danger'> ExpressJs </span>
             </h3>
