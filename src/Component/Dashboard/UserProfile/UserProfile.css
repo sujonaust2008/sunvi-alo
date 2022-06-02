@@ -1,0 +1,13 @@
+.profileStyle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 45px;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin: 100px auto;
+}
+
+.userPhoto {
+    width: 100%;
+}

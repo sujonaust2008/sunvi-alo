@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import './UserOrders.css';
 
 
 const MyAppointments = () => {
@@ -12,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orderProduct?buyer=${user.email}`)
+            fetch(`http://localhost:5000/orderProduct?userEmail=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
@@ -40,14 +41,16 @@ const MyAppointments = () => {
 
     return (
         <div className='w-75 mx-auto'>
-            <h2 className='my-5 text-center text-decoration-underline text-primary'>Your Added Services</h2>
+            <h2 className='my-5 text-center text-decoration-underline text-primary'>Your Orders</h2>
             <Table>
                 <tbody>
-                    <tr className='tableStyle Myitems  bg-dark text-white rounded-top'>
+                    <tr className='bg-dark text-white rounded-top text-center tableStyle'>
                         <td className='fw-bold'>Name</td>
-                        <td className='fw-bold text-center'>Price</td>
-                        <td className='fw-bold text-center' >Quantity</td>
-                        <td className='fw-bold text-center'>Delete</td>
+                        <td className='fw-bold '>Picture</td>
+                        <td className='fw-bold '>Price</td>
+                        <td className='fw-bold ' >Quantity</td>
+                        <td className='fw-bold '>Delete</td>
+                        <td className='fw-bold '>Payment</td>
                     </tr>
                 </tbody>
             </Table>
@@ -56,15 +59,19 @@ const MyAppointments = () => {
                 orders.map(addItemsToCart => <div key={addItemsToCart._id}>
                     <Table striped>
                         <tbody>
-                            <tr className='tableStyleMyitems '>
-                            
-                                <td>{addItemsToCart.name}</td>
-                                <td className='text-center'>{addItemsToCart.price}</td>
-                                <td className='text-center'>{addItemsToCart.quantity}</td>
-                                
-                                <td className='text-center'>
-                                    <button className='btn rounded px-4' onClick={()=>handleDelete(addItemsToCart._id)}>
+                            <tr className='text-center tableStyle'>
+                                <td className='fw-bold'>{addItemsToCart.productName}</td>
+                                <td className='p-0 m-0'><img src={addItemsToCart.img} alt='' className='imgStyle p-0 m-0'></img></td>
+                                <td className='fw-bold '>{addItemsToCart.Price}</td>
+                                <td className='fw-bold '>{addItemsToCart.userOrder}</td>
+                                <td className='fw-bold p-0 m-0'>
+                                    <button className='btn rounded px-4 btn-danger' onClick={()=>handleDelete(addItemsToCart._id)}>
                                         X
+                                    </button>
+                                </td>
+                                <td className='fw-bold p-0 m-0'>
+                                    <button className='btn btn-primary rounded px-4' onClick={()=>handleDelete(addItemsToCart._id)}>
+                                        Payment
                                     </button>
                                 </td>
                             </tr>
@@ -74,11 +81,7 @@ const MyAppointments = () => {
                 </div>)
             }
 
-            <div className='text-center mt-5'>
-                <Link to='/addItems'>
-                 <button className='btn btn-primary rounded px-5 text-white fw-bold fs-3'>Add New Items</button>
-                </Link>
-            </div>
+            
         </div>
     );
 };

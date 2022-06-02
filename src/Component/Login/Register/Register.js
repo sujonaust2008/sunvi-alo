@@ -34,6 +34,24 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const school= '';
+        const collage = '';
+        const university = '';
+        const address = '';
+        const phone = '';
+        const userProfile = {name, email, school, collage, university, address, phone };
+        const url = `http://localhost:5000/userProfile`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userProfile)
+        })
+        .then(res=> res.json())
+        .then(result =>{
+            console.log(result);
+        } )
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });

@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
 
 const PurcessInfo = () => {
     const { register, handleSubmit } = useForm();
@@ -42,8 +41,10 @@ const PurcessInfo = () => {
                 userEmail: user.email,
                 productName: event.target.productName.value,
                 userPhone: event.target.Phone.value,
-                userOrder : event.target.orderQuantity.value
-                
+                userOrder : event.target.orderQuantity.value,
+                description: productDetail.description,
+                img: productDetail.img,
+                Price: productDetail.Price
             }
             
             fetch('http://localhost:5000/orderProduct', {
@@ -102,6 +103,7 @@ const PurcessInfo = () => {
                         <input type="email" name="email" disabled value={user?.email || ''} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
                         <label className='text-info fw-bold'>Product Name</label>
                         <input type="text" name="productName" disabled value={productDetail?.name} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
+                        
                         <label className='text-info fw-bold'>Enter Your Phone No</label>
                         <input type="number" name="Phone" placeholder="Phone Number" className="w-100 py-2 my-2" /><br></br>
                         <label className='text-info fw-bold'>Enter order quantity</label>
