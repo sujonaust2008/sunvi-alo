@@ -15,6 +15,7 @@ import Blogs from './Component/Blogs/Blogs';
 import AddReviews from './Component/Dashboard/AddReviews/AddRevies';
 import UserProfile from './Component/Dashboard/UserProfile/UserProfile';
 import Dashboard from './Component/Dashboard/Dashboard/Dashboard';
+import UpdateInformation from './Component/Dashboard/UserProfile/UpdateInformation';
 
 function App() {
   return (
@@ -33,9 +34,10 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path="dashboard" element={<RequireAuth><Dashboard/></RequireAuth>} >
           <Route index element={<UserOrders></UserOrders>}></Route>
-          <Route path="review" element={<AddReviews></AddReviews>}></Route>
-          <Route path="profile" element={<UserProfile></UserProfile>}></Route>
+          <Route path="reviews" element={<AddReviews></AddReviews>}></Route>
+          <Route path="profile" element={<UpdateInformation></UpdateInformation>}></Route>
         </Route>
+        <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
 
         
 

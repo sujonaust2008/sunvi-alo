@@ -9,7 +9,7 @@ const ProductsDetails = () => {
     const [productDetail, setproductDetail]= useState({});
      
     useEffect(()=>{
-        const URL = `http://localhost:5000/manufacturer/${productId}`;
+        const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
         fetch(URL)
         .then(res=>res.json())
         .then(data=>setproductDetail(data))
@@ -28,7 +28,7 @@ const ProductsDetails = () => {
         // console.log(quantity);
         // const update = { quantity,name,img,supName,price,description };
         // console.log(update);
-        // const URL = `http://localhost:5000/manufacturer//${productId}`;
+        // const URL = `https://pacific-river-57240.herokuapp.com/manufacturer//${productId}`;
         // console.log(URL);
         // fetch(URL, {
         //     method: 'PUT',
@@ -63,7 +63,7 @@ const ProductsDetails = () => {
     //     console.log(quantity);
     //     const update = { quantity,name,img,supName,price,description };
     //     console.log(update);
-    //     const URL = `http://localhost:5000/manufacturer/manufacturer/${productId}`;
+    //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/manufacturer/${productId}`;
     //     console.log(URL);
     //     fetch(URL, {
     //         method: 'PUT',

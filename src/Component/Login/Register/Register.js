@@ -34,23 +34,25 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+
+        // This is for update user information 
         const school= '';
         const collage = '';
         const university = '';
         const address = '';
         const phone = '';
-        const userProfile = {name, email, school, collage, university, address, phone };
-        const url = `http://localhost:5000/userProfile`;
-        fetch(url, {
+        const userCreateProfile = {name,email, school, collage, university, address, phone }; 
+        fetch("https://pacific-river-57240.herokuapp.com/userCreateProfile", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(userProfile)
+            body: JSON.stringify(userCreateProfile)
         })
         .then(res=> res.json())
         .then(result =>{
-            console.log(result);
+            console.log("button clicked");
+            console.log(result)
         } )
 
         await createUserWithEmailAndPassword(email, password);

@@ -13,7 +13,7 @@ const MyAppointments = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orderProduct?userEmail=${user.email}`)
+            fetch(`https://pacific-river-57240.herokuapp.com/orderProduct?userEmail=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrders(data));
         }
@@ -26,7 +26,7 @@ const MyAppointments = () => {
 
         const proceed = window.confirm('Are you want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/orderProduct/${id}`;
+            const url = `https://pacific-river-57240.herokuapp.com/orderProduct/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

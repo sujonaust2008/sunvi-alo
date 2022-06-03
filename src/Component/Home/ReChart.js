@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './ReCharts.css';
 const ReChart = () => {
     const data = [
@@ -44,6 +44,7 @@ const ReChart = () => {
     return (
         <div className='reCharts mx-auto'>
             <h4 className='text-primary text-decoration-underline fw-bold my-5 text-center'>Your Seals over the Year</h4>
+            <ResponsiveContainer width="90%" height={250}>
             <LineChart
           width={500}
           height={300}
@@ -63,6 +64,7 @@ const ReChart = () => {
           <Line type="monotone" dataKey="Sales" stroke="#8884d8" activeDot={{ r: 8 }} />
           <Line type="monotone" dataKey="Benefit" stroke="#82ca9d" />
         </LineChart>
+            </ResponsiveContainer>
         </div>
     );
 };

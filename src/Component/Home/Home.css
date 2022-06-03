@@ -90,3 +90,16 @@
     align-items: center;
     margin: 10px auto;
 }
+
+.tableSytleReviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .tableStyleReviews {
+        grid-template-columns: 1fr;
+    }
+}

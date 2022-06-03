@@ -16,7 +16,7 @@ const PurcessInfo = () => {
     const [productDetail, setproductDetail]= useState({});
      
     useEffect(()=>{
-        const URL = `http://localhost:5000/manufacturer/${productId}`;
+        const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
         fetch(URL)
         .then(res=>res.json())
         .then(data=>setproductDetail(data))
@@ -46,8 +46,8 @@ const PurcessInfo = () => {
                 img: productDetail.img,
                 Price: productDetail.Price
             }
-            
-            fetch('http://localhost:5000/orderProduct', {
+            // https://pacific-river-57240.herokuapp.com
+            fetch('https://pacific-river-57240.herokuapp.com/orderProduct', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -72,7 +72,7 @@ const PurcessInfo = () => {
             
         //     const update = { name, img, description, minimumOrder, Price,stock };
         //     console.log(update);
-        //     const URL = `http://localhost:5000/manufacturer/${productId}`;
+        //     const URL = `https://pacific-river-57240.herokuapp.com/manufacturer/${productId}`;
         //     console.log(URL);
         //     fetch(URL, {
         //         method: 'PUT',
@@ -96,20 +96,22 @@ const PurcessInfo = () => {
     return (
         <div className='formStyle  mx-auto'>
             <h2 className='text-center my-2 text-decoration-underline text-success'>Place Your Order</h2>
-            <form onSubmit={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
-                        <label className='text-info fw-bold'>Your Name</label>
-                        <input type="text" name="name" disabled value={user?.displayName || ''} className="py-2 my-2 w-100 fw-bold text-primary" /><br></br>
-                        <label className='text-info fw-bold'>Your Email</label>
-                        <input type="email" name="email" disabled value={user?.email || ''} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
-                        <label className='text-info fw-bold'>Product Name</label>
-                        <input type="text" name="productName" disabled value={productDetail?.name} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
-                        
-                        <label className='text-info fw-bold'>Enter Your Phone No</label>
-                        <input type="number" name="Phone" placeholder="Phone Number" className="w-100 py-2 my-2" /><br></br>
-                        <label className='text-info fw-bold'>Enter order quantity</label>
-                        <input type="number" onChange={(e)=>setOrder(e.target.value)} name="orderQuantity" placeholder={productDetail.minimumOrder} className=" py-2 my-2 w-100 orderAmount" /><br></br>
-                        <input type="submit" id="submitButton" value="Submit" disabled={order<parseInt(productDetail.minimumOrder) || order>parseInt(productDetail.stock)} className="btn btn-primary text-white fw-bold w-100 orderButton py-3" />
-                    </form>
+                <form onSubmit={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-2'>
+                    <label className='text-info fw-bold'>Your Name</label>
+                    <input type="text" name="name" disabled value={user?.displayName || ''} className="py-2 my-2 w-100 fw-bold text-primary" /><br></br>
+                    <label className='text-info fw-bold'>Your Email</label>
+                    <input type="email" name="email" disabled value={user?.email || ''} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
+                    <label className='text-info fw-bold'>Product Name</label>
+                    <input type="text" name="productName" disabled value={productDetail?.name} className="w-100 fw-bold py-2 my-2 text-primary" /><br></br>
+                    
+                    <label className='text-info fw-bold'>Enter Your Phone No</label>
+                    <input type="number" name="Phone" placeholder="Phone Number" className="w-100 py-2 my-2" /><br></br>
+                    <label className='text-info fw-bold'>Enter order quantity</label>
+
+                    <input type="number" onChange={(e)=>setOrder(e.target.value)} name="orderQuantity" placeholder={productDetail.minimumOrder} className=" py-2 my-2 w-100 orderAmount" /><br></br>
+
+                    <input type="submit" id="submitButton" value="Submit" disabled={order<parseInt(productDetail.minimumOrder) || order>parseInt(productDetail.stock)} className="btn btn-primary text-white fw-bold w-100 orderButton py-3" />
+                </form>
             <ToastContainer/>
         </div>
     );

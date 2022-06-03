@@ -3,5 +3,13 @@
     width: 50%;
     display: grid;
     grid-template-columns: 1fr;
+    padding: 0;
 
+}
+
+@media only screen and (max-width: 800px) {
+    .reCharts {
+        width: 90%;
+
+    }
 }
